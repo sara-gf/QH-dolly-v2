@@ -84,7 +84,7 @@ class LM(object):
         self.model_config = config
         try:
             self.model_type = 'causal'
-            self.model_embeddings = self.model.get_input_embeddings()
+            self.model_embeddings = self.model.get_input_embeddings().weight
             self.collect_activations_layer_name_sig = 'mlp\.c_proj'
         except KeyError:
             raise ValueError(
