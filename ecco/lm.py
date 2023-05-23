@@ -633,8 +633,7 @@ class LM(object):
             basic.init('{viz_id}') // Python needs to know the viz id. Used for each output token.
             window.ecco['{viz_id}'] = new ecco.renderOutputSequence({{
                     parentDiv: '{viz_id}',
-                    data: {json.dumps(data)},
-                    tokenization_config: {json.dumps(self.model_config['tokenizer_config'])}
+                    data: {json.dumps(data)}
             
             }})
          }}, function (err) {{
