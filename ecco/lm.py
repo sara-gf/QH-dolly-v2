@@ -218,7 +218,7 @@ class LM(object):
             num_beams=beam_size,
             # FIXME: +1 in max_length to account for first start token in decoder, find a better way to do this
             max_length=(generate or max_length - cur_len) + 1 if self.model_type == 'enc-dec' else max_length,
-            early_stopping=True
+            early_stopping=True,
             do_sample=do_sample,
             top_p=top_p,
             top_k=top_k,
