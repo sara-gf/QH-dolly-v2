@@ -85,7 +85,7 @@ class LM(object):
         try:
             self.model_type = 'causal'
             self.model_embeddings = self.model.get_input_embeddings().weight
-            self.collect_activations_layer_name_sig = 'mlp\.dense_4h_to_h'
+            self.collect_activations_layer_name_sig = 'mlp\.act'
         except KeyError:
             raise ValueError(
                    f"The model '{self.model_name}' is not correctly configured in Ecco's 'model-config.yaml' file"
