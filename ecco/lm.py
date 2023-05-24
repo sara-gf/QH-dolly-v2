@@ -225,7 +225,7 @@ class LM(object):
             temperature=temperature,
             return_dict_in_generate=True,
             output_hidden_states=True,
-            output_attentions=True
+            output_attentions=True,
             output_scores=True,
             **generate_kwargs
         )
