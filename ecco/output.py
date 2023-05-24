@@ -139,8 +139,7 @@ class OutputSeq:
 
             ecco.renderOutputSequence({{
                 parentDiv: viz_id,
-                data: {data},
-                tokenization_config: {json.dumps(self.config['tokenizer_config'])}
+                data: {data}
             }})
          }}, function (err) {{
             console.log(err);
@@ -295,8 +294,7 @@ class OutputSeq:
                 window.ecco[viz_id] = new ecco.MinimalHighlighter({{
                     parentDiv: viz_id,
                     data: {json.dumps(data)},
-                    preset: 'viridis',
-                    tokenization_config: {json.dumps(self.config['tokenizer_config'])}
+                    preset: 'viridis'
 
              }})
 
@@ -314,8 +312,7 @@ class OutputSeq:
                 console.log(viz_id)
                 window.ecco[viz_id] = ecco.interactiveTokens({{
                     parentDiv: viz_id,
-                    data: {json.dumps(data)},
-                    tokenization_config: {json.dumps(self.config['tokenizer_config'])}
+                    data: {json.dumps(data)}
              }})
 
              }}, function (err) {{
