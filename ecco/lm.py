@@ -394,7 +394,7 @@ class LM(object):
                             'attribution': attributions,
                             'activations': self.activations,
                             'collect_activations_layer_nums': self.collect_activations_layer_nums,
-                            'lm_head': self.model.lm_head,
+                            'lm_head': self.model.embed_out,
                             'model_type': self.model_type,
                             'device': self.device,
                             'config': self.model_config})
@@ -439,7 +439,7 @@ class LM(object):
             lm_head = None
         elif self.model_type == 'causal':
             output = self.model(**input_tokens, return_dict=True, use_cache=False)
-            lm_head = self.model.lm_head
+            lm_head = self.model.embed_out
         elif self.model_type == 'enc-dec':
             decoder_input_ids = self.model._prepare_decoder_input_ids_for_generation(input_tokens['input_ids'], None, None)
             output = self.model(**input_tokens, decoder_input_ids=decoder_input_ids, return_dict=True, use_cache=False)
