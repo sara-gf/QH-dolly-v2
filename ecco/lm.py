@@ -233,7 +233,6 @@ class LM(object):
             prediction_ids, prediction_scores = output.sequences[0][1:], output.scores
 
         elif output.__class__.__name__.endswith("DecoderOnlyOutput"):
-            print(output.__class__.__name__)
             prediction_ids, prediction_scores = output.sequences[0][n_input_tokens:], output.scores
 
         else:
